@@ -1,0 +1,61 @@
+.section-about {
+  padding: 9.6rem;
+}
+
+.grid-about {
+  width: 60%;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.container--about {
+  padding: 6.4rem 6.4rem 0 6.4rem;
+}
+
+.about {
+  padding-top: 5rem;
+}
+
+.about-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.qualities {
+  box-shadow: 0 2.4rem 4.8rem 0 rgba(0, 0, 0, 0.075);
+  padding: 8rem 0;
+}
+
+.quality {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quality-items {
+  list-style: none;
+}
+
+ion-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #555;
+  transition: all 0.3s;
+}
+
+.item {
+  font-size: 1.8rem;
+  line-height: 1.8;
+
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 1.4rem;
+}
+
+ion-icon:hover {
+  transform: scale(1.5);
+}

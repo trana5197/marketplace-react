@@ -1,0 +1,23 @@
+.lab-inp label {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1.2rem;
+}
+
+.lab-inp input {
+  width: 100%;
+  padding: 1.6rem 3.2rem;
+  border-radius: 11px;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  margin-bottom: 2.4rem;
+}
+
+.lab-inp input::placeholder {
+  color: #aaa;
+}

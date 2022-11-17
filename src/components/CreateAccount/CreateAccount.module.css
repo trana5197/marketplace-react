@@ -1,0 +1,76 @@
+.create-container {
+  width: 90rem;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  padding: 3.2rem 6.4rem;
+  background-color: #edf7fe;
+  border-radius: 11px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading {
+  margin-bottom: 4.8rem;
+  text-align: center;
+}
+
+.heading h1 {
+  margin-bottom: 0.8rem;
+  font-size: 5.2rem;
+}
+
+.heading p {
+  color: #aaa;
+  font-size: 1.6rem;
+}
+
+label {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 1.2rem;
+}
+
+select {
+  width: 100%;
+  padding: 1.6rem 3.2rem;
+  border-radius: 11px;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+  margin-bottom: 2.4rem;
+}
+
+.btn--cancel {
+  background: none;
+  border: none;
+  background-color: #4dabf7;
+  font-size: 2rem;
+  color: #fff;
+  padding: 1.6rem 3.2rem;
+  font-weight: 500;
+  border-radius: 11px;
+  margin-top: 3.2rem;
+
+  transition: all 0.3s;
+}
+
+.btn--cancel:link,
+.btn--cancel:visited {
+  text-decoration: none;
+  background-color: #ddd;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn--cancel:hover,
+.btn--cancel:active {
+  background-color: #ccc;
+}

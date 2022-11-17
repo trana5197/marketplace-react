@@ -1,0 +1,12 @@
+.section-service {
+  padding: 9.6rem;
+}
+
+.grid-service {
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.service-cards {
+  padding: 9.6rem;
+}
