@@ -13,6 +13,16 @@
   transition: all 0.3s;
 }
 
+.btn:disabled {
+  background-color: #ddd;
+  color: #000;
+  cursor: not-allowed;
+}
+
+.btn:disabled:hover {
+  background-color: #ddd;
+}
+
 .btn:hover {
   background-color: #2e8bd8;
 }

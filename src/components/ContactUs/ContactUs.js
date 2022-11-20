@@ -113,7 +113,9 @@ const ContactUs = () => {
           <p className={classes.invalid}>Query cannot be empty</p>
         )}
 
-        <Button type="submit">Submit</Button>
+        <Button type="submit" disabled={!formIsValid}>
+          Submit
+        </Button>
         <Link to="/" className={classes["btn--cancel"]}>
           Cancel
         </Link>

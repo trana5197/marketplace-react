@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import useInput from "../../hook/use-input";
 
@@ -8,8 +7,14 @@ import Input from "../../reusable/Input/Input";
 import classes from "./CreateAccount.module.css";
 
 const CreateAccount = () => {
-  const [enteredProfile, setEnteredProfile] = useState("");
-  const profileIsValid = enteredProfile !== "";
+  const {
+    enteredValue: enteredProfile,
+    valueIsValid: profileIsValid,
+    valueIsInvalid: profileIsInvalid,
+    onChangeHandler: profileChangeHandler,
+    onBlurHandler: profileBlurHandler,
+    reset: profileReset,
+  } = useInput((value) => value !== "");
 
   const {
     enteredValue: enteredFirstName,
@@ -47,10 +52,6 @@ const CreateAccount = () => {
     reset: passwordReset,
   } = useInput((value) => value.length > 6);
 
-  const profileChangeHandler = (event) => {
-    setEnteredProfile(event.target.value);
-  };
-
   let formIsValid = false;
 
   if (
@@ -85,7 +86,7 @@ const CreateAccount = () => {
     lastNameReset();
     emailReset();
     passwordReset();
-    setEnteredProfile("");
+    profileReset();
   };
 
   return (
@@ -159,6 +160,7 @@ const CreateAccount = () => {
           id="select-profile"
           value={enteredProfile}
           onChange={profileChangeHandler}
+          onBlur={profileBlurHandler}
         >
           <option value="" defaultValue>
             Please choose one
@@ -168,7 +170,14 @@ const CreateAccount = () => {
           <option value="school-admin">School Admin</option>
           <option value="super-admin">Super Admin</option>
         </select>
-        <Button type="submit">Create Account</Button>
+        {profileIsInvalid && (
+          <p className={classes.invalid}>Please select a valid profile</p>
+        )}
+
+        <Button type="submit" disabled={!formIsValid}>
+          Create Account
+        </Button>
+
         <Link to="/" className={classes["btn--cancel"]}>
           Cancel
         </Link>
