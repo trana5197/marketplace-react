@@ -13,9 +13,7 @@ const SignIn = () => {
     onChangeHandler: emailChangeHandler,
     onBlurHandler: emailBlurHandler,
     reset: emailReset,
-  } = useInput((value) => {
-    return value.includes("@");
-  });
+  } = useInput((value) => value.includes("@"));
 
   const {
     enteredValue: enteredPassword,
@@ -24,9 +22,7 @@ const SignIn = () => {
     onChangeHandler: passwordChangeHandler,
     onBlurHandler: passwordBlurHandler,
     reset: passwordReset,
-  } = useInput((value) => {
-    return value.length > 6;
-  });
+  } = useInput((value) => value.length > 6);
 
   let formIsValid = false;
 
@@ -34,7 +30,7 @@ const SignIn = () => {
     formIsValid = true;
   }
 
-  const submitHandler = (event) => {
+  const onSubmitHandler = (event) => {
     event.preventDefault();
 
     if (!formIsValid) {
@@ -56,7 +52,7 @@ const SignIn = () => {
     <div className="form-box">
       <form
         className={`classes.form ${classes["login-container"]}`}
-        onSubmit={submitHandler}
+        onSubmit={onSubmitHandler}
         noValidate
       >
         <h1

@@ -18,9 +18,7 @@ const CreateAccount = () => {
     onChangeHandler: firstNameChangeHandler,
     onBlurHandler: firstNameBlurHandler,
     reset: firstNameReset,
-  } = useInput((value) => {
-    return value.trim().length !== 0;
-  });
+  } = useInput((value) => value.trim().length !== 0);
 
   const {
     enteredValue: enteredLastName,
@@ -29,9 +27,7 @@ const CreateAccount = () => {
     onChangeHandler: lastNameChangeHandler,
     onBlurHandler: lastNameBlurHandler,
     reset: lastNameReset,
-  } = useInput((value) => {
-    return value.trim().length !== 0;
-  });
+  } = useInput((value) => value.trim().length !== 0);
 
   const {
     enteredValue: enteredEmail,
@@ -40,9 +36,7 @@ const CreateAccount = () => {
     onChangeHandler: emailChangeHandler,
     onBlurHandler: emailBlurHandler,
     reset: emailReset,
-  } = useInput((value) => {
-    return value.includes("@");
-  });
+  } = useInput((value) => value.includes("@"));
 
   const {
     enteredValue: enteredPassword,
@@ -51,9 +45,7 @@ const CreateAccount = () => {
     onChangeHandler: passwordChangeHandler,
     onBlurHandler: passwordBlurHandler,
     reset: passwordReset,
-  } = useInput((value) => {
-    return value.length > 6;
-  });
+  } = useInput((value) => value.length > 6);
 
   const profileChangeHandler = (event) => {
     setEnteredProfile(event.target.value);
@@ -71,7 +63,7 @@ const CreateAccount = () => {
     formIsValid = true;
   }
 
-  const submitHandler = (event) => {
+  const onSubmitHandler = (event) => {
     event.preventDefault();
     // console.log(firstNameIsInvalid);
 
@@ -100,7 +92,7 @@ const CreateAccount = () => {
     <div className="form-box">
       <form
         className={`classes.form ${classes["create-container"]}`}
-        onSubmit={submitHandler}
+        onSubmit={onSubmitHandler}
         noValidate
       >
         <div className={`${classes.heading} border-bottom`}>
