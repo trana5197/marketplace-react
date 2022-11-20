@@ -17,7 +17,7 @@ const CreateAccount = () => {
     valueIsInvalid: firstNameIsInvalid,
     onChangeHandler: firstNameChangeHandler,
     onBlurHandler: firstNameBlurHandler,
-    reset: firstNameIsReset,
+    reset: firstNameReset,
   } = useInput((value) => {
     return value.trim().length !== 0;
   });
@@ -28,7 +28,7 @@ const CreateAccount = () => {
     valueIsInvalid: lastNameIsInvalid,
     onChangeHandler: lastNameChangeHandler,
     onBlurHandler: lastNameBlurHandler,
-    reset: lastNameIsReset,
+    reset: lastNameReset,
   } = useInput((value) => {
     return value.trim().length !== 0;
   });
@@ -39,7 +39,7 @@ const CreateAccount = () => {
     valueIsInvalid: emailIsInvalid,
     onChangeHandler: emailChangeHandler,
     onBlurHandler: emailBlurHandler,
-    reset: emailIsReset,
+    reset: emailReset,
   } = useInput((value) => {
     return value.includes("@");
   });
@@ -50,7 +50,7 @@ const CreateAccount = () => {
     valueIsInvalid: passwordIsInvalid,
     onChangeHandler: passwordChangeHandler,
     onBlurHandler: passwordBlurHandler,
-    reset: passwordIsReset,
+    reset: passwordReset,
   } = useInput((value) => {
     return value.length > 6;
   });
@@ -89,10 +89,10 @@ const CreateAccount = () => {
 
     console.log(newUser);
 
-    firstNameIsReset();
-    lastNameIsReset();
-    emailIsReset();
-    passwordIsReset();
+    firstNameReset();
+    lastNameReset();
+    emailReset();
+    passwordReset();
     setEnteredProfile("");
   };
 
