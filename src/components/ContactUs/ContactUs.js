@@ -7,18 +7,22 @@ const ContactUs = () => {
   return (
     <div className="form-box">
       <form className={`classes.form ${classes["contact-container"]}`}>
-        <h1 className="heading-primary">Contact Us</h1>
+        <h1
+          className={`heading-primary ${classes["heading-primary-add"]} border-bottom`}
+        >
+          Contact Us
+        </h1>
 
         <Input
           id="fullName"
-          name="Full Name"
+          label="Full Name"
           type="text"
           placeholder="John Doe"
         />
 
         <Input
           id="email"
-          name="Email Id"
+          label="Email Id"
           type="email"
           placeholder="me@example.com"
         />

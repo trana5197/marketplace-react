@@ -12,6 +12,11 @@
   justify-content: center;
 }
 
+.heading-primary-add {
+  font-size: 5.4rem;
+  text-align: center;
+}
+
 .btn-link:link,
 .btn-link:visited {
   text-decoration: none;

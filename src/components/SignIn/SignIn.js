@@ -8,18 +8,22 @@ const SignIn = () => {
   return (
     <div className="form-box">
       <form className={`classes.form ${classes["login-container"]}`}>
-        <h1 className="heading-primary">Sign In</h1>
+        <h1
+          className={`heading-primary ${classes["heading-primary-add"]} border-bottom`}
+        >
+          Sign In
+        </h1>
 
         <Input
           id="email"
-          name="Email Id"
+          label="Email Id"
           type="email"
           placeholder="me@example.com"
         />
 
         <Input
           id="password"
-          name="Password"
+          label="Password"
           type="password"
           placeholder="Password"
         />
