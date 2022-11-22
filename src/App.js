@@ -8,6 +8,13 @@ import Home from "./components/Home/Home";
 import Service from "./components/Service/Service";
 import Forget from "./components/Forget/Forget";
 import SignIn from "./components/SignIn/SignIn";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:8000/";
+axios.defaults.headers.post["Content-Type"] = "Application/json";
+axios.defaults.headers.post["Accept"] = "Application/json";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   return (

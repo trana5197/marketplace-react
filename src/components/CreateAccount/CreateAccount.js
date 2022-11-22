@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useInput from "../../hook/use-input";
+import axios from "axios";
 
 import Button from "../../reusable/Button/Button";
 import Input from "../../reusable/Input/Input";
@@ -72,6 +73,23 @@ const CreateAccount = () => {
       return;
     }
 
+    // async function createUser() {
+    //   const csrf = await axios.get("/sanctum/csrf-cookie");
+    //   console.log("csrf = ", csrf);
+
+    //   const CreateAccount = await axios.post("/api/create-account", {
+    //     firstName: enteredFirstName,
+    //     lastName: enteredLastName,
+    //     email: enteredEmail,
+    //     password: enteredPassword,
+    //     profile: enteredProfile,
+    //   });
+
+    //   console.log("createAccount = ", CreateAccount);
+    // }
+
+    // createUser();
+
     const newUser = {
       firstName: enteredFirstName,
       lastName: enteredLastName,
@@ -80,7 +98,17 @@ const CreateAccount = () => {
       profile: enteredProfile,
     };
 
-    console.log(newUser);
+    axios.get("/sanctum/csrf-cookie").then(() => {
+      axios.post("/api/create-account", newUser).then((res) => {
+        if (res.data.status === 200) {
+          console.log(res.data);
+        } else {
+          console.log("error");
+        }
+      });
+    });
+
+    // console.log(newUser);
 
     firstNameReset();
     lastNameReset();
@@ -174,6 +202,7 @@ const CreateAccount = () => {
           <p className={classes.invalid}>Please select a valid profile</p>
         )}
 
+        {/* <Button type="submit"> */}
         <Button type="submit" disabled={!formIsValid}>
           Create Account
         </Button>

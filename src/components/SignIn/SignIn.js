@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import useInput from "../../hook/use-input";
 import Button from "../../reusable/Button/Button";
 import Input from "../../reusable/Input/Input";
+import axios from "axios";
 
 import classes from "./SignIn.module.css";
 
@@ -42,7 +43,17 @@ const SignIn = () => {
       password: enteredPassword,
     };
 
-    console.log(checkUser);
+    axios.get("/sanctum/csrf-cookie").then(() => {
+      axios.post("/api/sign-in", checkUser).then((res) => {
+        if (res.data.status === 200) {
+          console.log(res.data);
+        } else {
+          console.log("error");
+        }
+      });
+    });
+
+    // console.log(checkUser);
 
     emailReset();
     passwordReset();
