@@ -1,12 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import useInput from "../../hook/use-input";
+
 import Button from "../../reusable/Button/Button";
 import Input from "../../reusable/Input/Input";
+
+import AuthContext from "../../store/auth-context";
 import axios from "axios";
 
 import classes from "./SignIn.module.css";
 
 const SignIn = () => {
+  const authCtx = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
   const {
     enteredValue: enteredEmail,
     valueIsValid: emailIsValid,
@@ -47,6 +55,9 @@ const SignIn = () => {
       axios.post("/api/sign-in", checkUser).then((res) => {
         if (res.data.status === 200) {
           console.log(res.data);
+          // console.log(res.data.token);
+          authCtx.signIn(res.data.token);
+          navigate("/", { replace: true });
         } else {
           console.log("error");
         }
