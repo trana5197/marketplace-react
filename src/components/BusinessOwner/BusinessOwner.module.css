@@ -1,0 +1,78 @@
+.grid--2-cols--profile {
+  grid-template-columns: 30fr 70fr;
+}
+
+.side-bar {
+  border-right: 1px solid #ddd;
+  padding: 4.8rem;
+}
+
+.dashboard {
+  padding: 4.8rem;
+}
+
+.dashboard-right {
+  width: 100%;
+  justify-self: center;
+}
+
+.side-nav-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.side-nav-link:link,
+.side-nav-link:visited {
+  font-size: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+}
+
+.side-nav-link:hover,
+.side-nav-link:active {
+  color: #2e8bd8;
+}
+
+.profile {
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.075);
+
+  display: flex;
+  flex-direction: column;
+  gap: 4.8rem;
+}
+
+.profile-img {
+  width: 20rem;
+  border-radius: 50%;
+  align-self: center;
+  margin-top: 3.2rem;
+}
+
+.profile-desc {
+  padding: 3.2rem 6.4rem 12.8rem 6.4rem;
+  text-align: center;
+}
+
+.profile-name {
+  font-size: 3rem;
+  font-weight: 400;
+  margin-bottom: 0.8rem;
+}
+
+.profile-role {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2e8bd8;
+  margin-bottom: 3.2rem;
+  letter-spacing: 0.5px;
+}
+
+.profile-email {
+  font-size: 2rem;
+  font-weight: 400;
+}

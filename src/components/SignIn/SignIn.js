@@ -56,7 +56,13 @@ const SignIn = () => {
         if (res.data.status === 200) {
           console.log(res.data);
           // console.log(res.data.token);
+          // console.log(res.data.profile);
           authCtx.signIn(res.data.token);
+          authCtx.setFirstName(res.data.firstName);
+          authCtx.setLastName(res.data.lastName);
+          authCtx.setEmail(res.data.email);
+          authCtx.setProfile(res.data.profile);
+          // console.log(authCtx.profile);
           navigate("/", { replace: true });
         } else {
           console.log("error");
