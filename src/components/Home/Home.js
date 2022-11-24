@@ -1,4 +1,5 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import AuthContext from "../../store/auth-context";
 import BusinessOwner from "../BusinessOwner/BusinessOwner";
 import SchoolAdmin from "../SchoolAdmin/SchoolAdmin";
@@ -6,9 +7,22 @@ import Student from "../Student/Student";
 import SuperAdmin from "../SuperAdmin/SuperAdmin";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const authCtx = useContext(AuthContext);
 
   const profile = authCtx.profile;
+  // console.log(profile);
+  // console.log(navigate);
+
+  useEffect(() => {
+    if (profile === "" || profile === null) {
+      navigate("/", { replace: true });
+    } else {
+      navigate(`/${profile}`, { replace: true });
+    }
+  }, [navigate, profile]);
+
   let homePage;
 
   if (profile === "student") {
@@ -20,8 +34,7 @@ const Home = () => {
         profile={authCtx.profile}
       />
     );
-  }
-  if (profile === "business-owner") {
+  } else if (profile === "business-owner") {
     homePage = (
       <BusinessOwner
         firstName={authCtx.firstName}
@@ -30,9 +43,7 @@ const Home = () => {
         profile={authCtx.profile}
       />
     );
-  }
-
-  if (profile === "school-admin") {
+  } else if (profile === "school-admin") {
     homePage = (
       <SchoolAdmin
         firstName={authCtx.firstName}
@@ -41,9 +52,7 @@ const Home = () => {
         profile={authCtx.profile}
       />
     );
-  }
-
-  if (profile === "super-admin") {
+  } else if (profile === "super-admin") {
     homePage = (
       <SuperAdmin
         firstName={authCtx.firstName}

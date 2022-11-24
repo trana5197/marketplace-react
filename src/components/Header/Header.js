@@ -11,8 +11,14 @@ const Header = () => {
 
   const isLoggedIn = authCtx.isLoggedIn;
 
+  const profileStudent = authCtx.profile === "student";
+  const profileBusinessOwner = authCtx.profile === "business-owner";
+  const profileSchoolAdmin = authCtx.profile === "school-admin";
+  const profileSuperAdmin = authCtx.profile === "super-admin";
+
   const signOutHandler = () => {
     authCtx.signOut();
+    authCtx.setProfile("");
   };
 
   return (
@@ -23,9 +29,31 @@ const Header = () => {
       <nav className={`margin-right ${classes.nav}`}>
         <ul>
           <li>
-            <NavLink className={classes.link} to="/">
-              Home
-            </NavLink>
+            {!isLoggedIn && (
+              <NavLink className={classes.link} to="/">
+                Home
+              </NavLink>
+            )}
+            {isLoggedIn && profileStudent && (
+              <NavLink className={classes.link} to="/student">
+                Student
+              </NavLink>
+            )}
+            {isLoggedIn && profileBusinessOwner && (
+              <NavLink className={classes.link} to="/business-owner">
+                Business Owner
+              </NavLink>
+            )}
+            {isLoggedIn && profileSchoolAdmin && (
+              <NavLink className={classes.link} to="/school-admin">
+                School Admin
+              </NavLink>
+            )}
+            {isLoggedIn && profileSuperAdmin && (
+              <NavLink className={classes.link} to="/super-admin">
+                Super Admin
+              </NavLink>
+            )}
           </li>
           <li>Blog</li>
           <li>
