@@ -1,0 +1,8 @@
+.btns {
+  display: flex;
+  gap: 2rem;
+}
+
+.function {
+  margin-top: 8rem;
+}

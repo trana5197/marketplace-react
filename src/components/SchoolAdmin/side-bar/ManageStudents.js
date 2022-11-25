@@ -1,23 +1,27 @@
 import { useEffect, useState } from "react";
 import JoinButton from "../../../reusable/Button/JoinButton";
-import AddFunction from "../../../reusable/function-buttons/AddFunction";
 import ListFunction from "../../../reusable/function-buttons/ListFunction";
+import CreateAccount from "../../CreateAccount/CreateAccount";
 
-import classes from "./ManageProducts.module.css";
+import classes from "./ManageStudents.module.css";
 
-const ManageProducts = () => {
+const ManageStudents = () => {
   const [btnFunction, setBtnFunction] = useState("");
 
   useEffect(() => {
-    setBtnFunction(<ListFunction url="api/get-products" type="products" />);
+    setBtnFunction(
+      <ListFunction url="api/get-users/student" type="students" />
+    );
   }, []);
 
   const listProductHandler = () => {
-    setBtnFunction(<ListFunction url="api/get-products" type="products" />);
+    setBtnFunction(
+      <ListFunction url="api/get-users/student" type="students" />
+    );
   };
 
-  const addProductHandler = () => {
-    setBtnFunction(<AddFunction />);
+  const addStudentHandler = () => {
+    setBtnFunction(<CreateAccount />);
   };
 
   return (
@@ -26,8 +30,8 @@ const ManageProducts = () => {
         <button className="btn" onClick={listProductHandler}>
           List
         </button>
-        <JoinButton onClick={addProductHandler} type="button">
-          Add Products
+        <JoinButton onClick={addStudentHandler} type="button">
+          Add Students
         </JoinButton>
       </div>
       <div className={classes.function}>{btnFunction}</div>
@@ -35,4 +39,4 @@ const ManageProducts = () => {
   );
 };
 
-export default ManageProducts;
+export default ManageStudents;

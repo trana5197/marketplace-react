@@ -1,0 +1,51 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.data {
+  background-color: #ddd;
+  padding: 3.2rem;
+  border-radius: 9px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.data-name {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.data-price {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+  /* align-self: center; */
+}
+
+.data-email {
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.data-profile {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2e8bd8;
+}
+
+.btn {
+  align-self: center;
+}

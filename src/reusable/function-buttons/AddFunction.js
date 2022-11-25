@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import AuthContext from "../../store/auth-context";
+
+import axios from "axios";
+
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 
 const AddFunction = () => {
+  const authCtx = useContext(AuthContext);
   const [enteredProductName, setEnteredProductName] = useState("");
   const [enteredProductPrice, setEnteredProductPrice] = useState("");
 
@@ -18,9 +23,18 @@ const AddFunction = () => {
     event.preventDefault();
 
     const newProduct = {
-      productName: enteredProductName,
-      productPrice: enteredProductPrice,
+      name: enteredProductName,
+      price: enteredProductPrice,
+      email: authCtx.email,
     };
+
+    axios.post("/api/create-product", newProduct).then((res) => {
+      if (res.data.status === 200) {
+        console.log(res.data);
+      } else {
+        console.log("error");
+      }
+    });
 
     console.log(newProduct);
     setEnteredProductName("");

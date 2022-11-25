@@ -73,23 +73,6 @@ const CreateAccount = () => {
       return;
     }
 
-    // async function createUser() {
-    //   const csrf = await axios.get("/sanctum/csrf-cookie");
-    //   console.log("csrf = ", csrf);
-
-    //   const CreateAccount = await axios.post("/api/create-account", {
-    //     firstName: enteredFirstName,
-    //     lastName: enteredLastName,
-    //     email: enteredEmail,
-    //     password: enteredPassword,
-    //     profile: enteredProfile,
-    //   });
-
-    //   console.log("createAccount = ", CreateAccount);
-    // }
-
-    // createUser();
-
     const newUser = {
       firstName: enteredFirstName,
       lastName: enteredLastName,

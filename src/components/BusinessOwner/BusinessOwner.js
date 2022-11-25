@@ -30,7 +30,7 @@ const BusinessOwner = (props) => {
   const manageAdvertisementHandler = (event) => {
     event.preventDefault();
 
-    // setDashboardRight();
+    setDashboardRight();
   };
 
   const manageChatHandler = (event) => {
@@ -75,12 +75,6 @@ const BusinessOwner = (props) => {
           </ul>
         </div>
         {dashboardRight}
-        {/* <HomeBusinessOwner
-          firstName={props.firstName}
-          lastName={props.lastName}
-          profile={props.profile}
-          email={props.email}
-        /> */}
       </div>
     </section>
   );

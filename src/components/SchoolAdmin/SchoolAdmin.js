@@ -1,7 +1,47 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import HomeSchoolAdmin from "./HomeSchoolAdmin";
+
 import classes from "./SchoolAdmin.module.css";
+import ManageBusinessOwner from "./side-bar/ManageBusinessOwner";
+import ManageStudents from "./side-bar/ManageStudents";
 
 const SchoolAdmin = (props) => {
+  const [dashboardRight, setDashboardRight] = useState("");
+
+  useEffect(() => {
+    setDashboardRight(
+      <HomeSchoolAdmin
+        firstName={props.firstName}
+        lastName={props.lastName}
+        profile={props.profile}
+        email={props.email}
+      />
+    );
+  }, [props.firstName, props.lastName, props.profile, props.email]);
+
+  const manageStudentHandler = (event) => {
+    event.preventDefault();
+    setDashboardRight(<ManageStudents />);
+  };
+
+  const manageBusinessOwnerHandler = (event) => {
+    event.preventDefault();
+    setDashboardRight(<ManageBusinessOwner />);
+  };
+
+  const clubHandler = (event) => {
+    event.preventDefault();
+  };
+
+  const postHandler = (event) => {
+    event.preventDefault();
+  };
+
+  const reportHandler = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <section>
       <div
@@ -11,7 +51,11 @@ const SchoolAdmin = (props) => {
           <h2 className="heading-tertiary">Dashboard</h2>
           <ul className={classes["side-nav-list"]}>
             <li>
-              <Link className={classes["side-nav-link"]} to="/manage-student">
+              <Link
+                className={classes["side-nav-link"]}
+                to="/manage-student"
+                onClick={manageStudentHandler}
+              >
                 Manage Student
               </Link>
             </li>
@@ -19,44 +63,42 @@ const SchoolAdmin = (props) => {
               <Link
                 className={classes["side-nav-link"]}
                 to="/manage-business-owner"
+                onClick={manageBusinessOwnerHandler}
               >
                 Manage BusinessOwner
               </Link>
             </li>
             <li>
-              <Link className={classes["side-nav-link"]} to="/club">
+              <Link
+                className={classes["side-nav-link"]}
+                to="/club"
+                onClick={clubHandler}
+              >
                 Clubs
               </Link>
             </li>
             <li>
-              <Link className={classes["side-nav-link"]} to="#">
+              <Link
+                className={classes["side-nav-link"]}
+                to="#"
+                onClick={postHandler}
+              >
                 Posts
               </Link>
             </li>
             <li>
-              <Link className={classes["side-nav-link"]} to="#">
+              <Link
+                className={classes["side-nav-link"]}
+                to="#"
+                onClick={reportHandler}
+              >
                 Reports
               </Link>
             </li>
           </ul>
         </div>
 
-        <div className={classes["dashboard-right"]}>
-          <div className={classes.profile}>
-            <img
-              className={`${classes["profile-img"]} border-bottom`}
-              src=""
-              alt="A person"
-            />
-            <div className={`${classes["profile-desc"]} border-top`}>
-              <p
-                className={classes["profile-name"]}
-              >{`${props.firstName} ${props.lastName}`}</p>
-              <p className={classes["profile-role"]}>Role: {props.profile}</p>
-              <p className={classes["profile-email"]}>{props.email}</p>
-            </div>
-          </div>
-        </div>
+        {dashboardRight}
       </div>
     </section>
   );
