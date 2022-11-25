@@ -11,11 +11,6 @@
   padding: 4.8rem;
 }
 
-.dashboard-right {
-  width: 100%;
-  justify-self: center;
-}
-
 .side-nav-list {
   list-style: none;
 
@@ -35,6 +30,11 @@
 .side-nav-link:hover,
 .side-nav-link:active {
   color: #2e8bd8;
+}
+
+.dashboard-right {
+  width: 100%;
+  justify-self: center;
 }
 
 .profile {

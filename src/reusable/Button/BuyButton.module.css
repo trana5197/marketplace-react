@@ -1,0 +1,11 @@
+.buy {
+  background-color: rgba(237, 11, 11, 0.838);
+  color: #fff;
+  cursor: pointer;
+}
+
+.join {
+  background-color: rgba(2, 236, 253, 0.805);
+  color: #222;
+  cursor: pointer;
+}

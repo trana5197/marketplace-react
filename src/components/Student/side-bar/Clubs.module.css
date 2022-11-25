@@ -1,0 +1,31 @@
+.clubs {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.club {
+  background-color: #ddd;
+  padding: 3.2rem;
+  border-radius: 9px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.club-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  align-self: center;
+}
+
+.club-name {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.btn {
+  align-self: center;
+}

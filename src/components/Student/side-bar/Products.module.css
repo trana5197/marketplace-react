@@ -1,0 +1,37 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.product {
+  background-color: #ddd;
+  padding: 3.2rem;
+  border-radius: 9px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-desc {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.product-name {
+  font-size: 3.2rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.product-price {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #000;
+  /* align-self: center; */
+}
+
+.btn {
+  align-self: center;
+}

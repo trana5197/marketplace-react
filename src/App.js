@@ -56,6 +56,8 @@ function App() {
           {isLoggedIn && profileSuperAdmin && (
             <Route path="/super-admin" element={<Home />} />
           )}
+          {/* <Route path="/products" element={<Home />} /> */}
+
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>
