@@ -10,13 +10,13 @@ const ManageBusinessOwner = () => {
 
   useEffect(() => {
     setBtnFunction(
-      <ListFunction url="api/get-users/business-owner" type="students" />
+      <ListFunction url="api/get-users/business-owner" type="business-owner" />
     );
   }, []);
 
   const listProductHandler = () => {
     setBtnFunction(
-      <ListFunction url="api/get-users/business-owner" type="students" />
+      <ListFunction url="api/get-users/business-owner" type="business-owner" />
     );
   };
 

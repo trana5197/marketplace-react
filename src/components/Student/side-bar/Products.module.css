@@ -33,5 +33,14 @@
 }
 
 .btn {
-  align-self: center;
+  /* align-self: center; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn input {
+  width: 10rem;
+  padding: 0.5rem 1rem;
 }

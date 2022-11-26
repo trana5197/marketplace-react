@@ -76,3 +76,25 @@
   font-size: 2rem;
   font-weight: 400;
 }
+
+.orders {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+/* .icon ion-icon {
+  height: 3.2rem;
+  width: 3.2rem;
+} */
+
+.order {
+  font-size: 2rem;
+}
+
+.quantity {
+  background-color: #2e8bd8;
+  color: #000;
+  padding: 0.9rem 1.2rem;
+  border-radius: 1000px;
+}

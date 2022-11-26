@@ -4,6 +4,7 @@ import HomeSchoolAdmin from "./HomeSchoolAdmin";
 
 import classes from "./SchoolAdmin.module.css";
 import ManageBusinessOwner from "./side-bar/ManageBusinessOwner";
+import ManageClub from "./side-bar/ManageClub";
 import ManageStudents from "./side-bar/ManageStudents";
 
 const SchoolAdmin = (props) => {
@@ -30,8 +31,9 @@ const SchoolAdmin = (props) => {
     setDashboardRight(<ManageBusinessOwner />);
   };
 
-  const clubHandler = (event) => {
+  const manageClubHandler = (event) => {
     event.preventDefault();
+    setDashboardRight(<ManageClub />);
   };
 
   const postHandler = (event) => {
@@ -72,9 +74,9 @@ const SchoolAdmin = (props) => {
               <Link
                 className={classes["side-nav-link"]}
                 to="/club"
-                onClick={clubHandler}
+                onClick={manageClubHandler}
               >
-                Clubs
+                Manage Clubs
               </Link>
             </li>
             <li>

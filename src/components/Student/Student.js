@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import HomeStudent from "./HomeStudent";
-import Clubs from "./side-bar/Clubs";
+import ManageClubStudent from "./side-bar/ManageClubStudent";
+import Orders from "./side-bar/Orders";
 import Products from "./side-bar/Products";
 
 import classes from "./Student.module.css";
@@ -29,12 +30,12 @@ const Student = (props) => {
 
   const clubsHandler = (event) => {
     event.preventDefault();
-
-    setDashboardRight(<Clubs />);
+    setDashboardRight(<ManageClubStudent />);
   };
 
   const ordersHandler = (event) => {
     event.preventDefault();
+    setDashboardRight(<Orders />);
   };
 
   const postHandler = (event) => {
@@ -70,11 +71,15 @@ const Student = (props) => {
             </li>
             <li>
               <Link
-                className={classes["side-nav-link"]}
+                className={`${classes["side-nav-link"]} ${classes.orders}`}
                 to="#"
                 onClick={ordersHandler}
               >
-                Orders
+                {/* <span className={classes.icon}>
+                  <ion-icon name="cart"></ion-icon>
+                </span> */}
+                <span className={classes.order}>Orders</span>
+                <span className={classes.quantity}>1</span>
               </Link>
             </li>
             <li>
