@@ -36,14 +36,6 @@ const SchoolAdmin = (props) => {
     setDashboardRight(<ManageClub />);
   };
 
-  const postHandler = (event) => {
-    event.preventDefault();
-  };
-
-  const reportHandler = (event) => {
-    event.preventDefault();
-  };
-
   return (
     <section>
       <div
@@ -77,24 +69,6 @@ const SchoolAdmin = (props) => {
                 onClick={manageClubHandler}
               >
                 Manage Clubs
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={classes["side-nav-link"]}
-                to="#"
-                onClick={postHandler}
-              >
-                Posts
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={classes["side-nav-link"]}
-                to="#"
-                onClick={reportHandler}
-              >
-                Reports
               </Link>
             </li>
           </ul>

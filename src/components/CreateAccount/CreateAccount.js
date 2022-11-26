@@ -178,8 +178,8 @@ const CreateAccount = () => {
           </option>
           <option value="student">Student</option>
           <option value="business-owner">Business Owner</option>
-          <option value="school-admin">School Admin</option>
-          <option value="super-admin">Super Admin</option>
+          {/* <option value="school-admin">School Admin</option>
+          <option value="super-admin">Super Admin</option> */}
         </select>
         {profileIsInvalid && (
           <p className={classes.invalid}>Please select a valid profile</p>
