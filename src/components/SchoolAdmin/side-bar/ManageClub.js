@@ -10,7 +10,7 @@ const ManageClub = () => {
   const [btnFunction, setBtnFunction] = useState("");
 
   useEffect(() => {
-    setBtnFunction(<Clubs url="api/get-clubs" type="business-owner" />);
+    setBtnFunction(<Clubs url="api/get-clubs" type="JOIN" />);
   }, []);
 
   const listProductHandler = () => {

@@ -1,7 +1,41 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import ManageBusinessOwner from "../SchoolAdmin/side-bar/ManageBusinessOwner";
+import ManageStudents from "../SchoolAdmin/side-bar/ManageStudents";
+import HomeSuperAdmin from "./HomeSuperAdmin";
+import ManageSchoolAdmin from "./side-bar/ManageSchoolAdmin";
+
 import classes from "./SuperAdmin.module.css";
 
 const SuperAdmin = (props) => {
+  const [dashboardRight, setDashboardRight] = useState("");
+
+  useEffect(() => {
+    setDashboardRight(
+      <HomeSuperAdmin
+        firstName={props.firstName}
+        lastName={props.lastName}
+        profile={props.profile}
+        email={props.email}
+      />
+    );
+  }, [props.firstName, props.lastName, props.profile, props.email]);
+
+  const manageSchoolAdminHandler = (event) => {
+    event.preventDefault();
+    setDashboardRight(<ManageSchoolAdmin />);
+  };
+
+  const manageStudentHandler = (event) => {
+    event.preventDefault();
+    setDashboardRight(<ManageStudents />);
+  };
+
+  const manageBusinessOwnerHandler = (event) => {
+    event.preventDefault();
+    setDashboardRight(<ManageBusinessOwner />);
+  };
+
   return (
     <section>
       <div
@@ -11,44 +45,35 @@ const SuperAdmin = (props) => {
           <h2 className="heading-tertiary">Dashboard</h2>
           <ul className={classes["side-nav-list"]}>
             <li>
-              <Link className={classes["side-nav-link"]} to="/product">
+              <Link
+                className={classes["side-nav-link"]}
+                to="/product"
+                onClick={manageSchoolAdminHandler}
+              >
                 Manage School Admins
               </Link>
             </li>
             <li>
-              <Link className={classes["side-nav-link"]} to="club">
+              <Link
+                className={classes["side-nav-link"]}
+                to="club"
+                onClick={manageStudentHandler}
+              >
                 Manage Students
               </Link>
             </li>
             <li>
-              <Link className={classes["side-nav-link"]} to="#">
+              <Link
+                className={classes["side-nav-link"]}
+                to="#"
+                onClick={manageBusinessOwnerHandler}
+              >
                 Manage Business Owners
-              </Link>
-            </li>
-            <li>
-              <Link className={classes["side-nav-link"]} to="#">
-                Chat
               </Link>
             </li>
           </ul>
         </div>
-
-        <div className={classes["dashboard-right"]}>
-          <div className={classes.profile}>
-            <img
-              className={`${classes["profile-img"]} border-bottom`}
-              src=""
-              alt="A person"
-            />
-            <div className={`${classes["profile-desc"]} border-top`}>
-              <p
-                className={classes["profile-name"]}
-              >{`${props.firstName} ${props.lastName}`}</p>
-              <p className={classes["profile-role"]}>Role: {props.profile}</p>
-              <p className={classes["profile-email"]}>{props.email}</p>
-            </div>
-          </div>
-        </div>
+        {dashboardRight}
       </div>
     </section>
   );

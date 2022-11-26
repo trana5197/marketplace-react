@@ -38,10 +38,6 @@ const Student = (props) => {
     setDashboardRight(<Orders />);
   };
 
-  const postHandler = (event) => {
-    event.preventDefault();
-  };
-
   return (
     // <section className="section-student">
     <section>
@@ -75,31 +71,9 @@ const Student = (props) => {
                 to="#"
                 onClick={ordersHandler}
               >
-                {/* <span className={classes.icon}>
-                  <ion-icon name="cart"></ion-icon>
-                </span> */}
                 <span className={classes.order}>Orders</span>
-                <span className={classes.quantity}>1</span>
               </Link>
             </li>
-            <li>
-              <Link
-                className={classes["side-nav-link"]}
-                to="#"
-                onClick={postHandler}
-              >
-                Post
-              </Link>
-            </li>
-            {/* <li>
-              <Link
-                className={classes["side-nav-link"]}
-                to="/advertisement"
-                onClick={advertisementHandler}
-              >
-                Advertisement
-              </Link>
-            </li> */}
           </ul>
         </div>
         {dashboardRight}

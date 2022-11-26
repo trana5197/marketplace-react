@@ -27,12 +27,6 @@ const BusinessOwner = (props) => {
     // navigate("/products", { replace: true });
   };
 
-  const manageAdvertisementHandler = (event) => {
-    event.preventDefault();
-
-    setDashboardRight();
-  };
-
   const manageChatHandler = (event) => {
     event.preventDefault();
   };
@@ -52,15 +46,6 @@ const BusinessOwner = (props) => {
                 onClick={manageProductsHandler}
               >
                 Manage Products
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={classes["side-nav-link"]}
-                to="#"
-                onClick={manageAdvertisementHandler}
-              >
-                Manage Advertisement
               </Link>
             </li>
             <li>
