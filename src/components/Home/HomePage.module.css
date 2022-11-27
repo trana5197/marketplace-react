@@ -1,0 +1,143 @@
+.section-hero {
+  padding: 4.8rem 0 9.6rem 0;
+  background-color: #edf7fe;
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.hero-text {
+  font-size: 2.2rem;
+  line-height: 1.6;
+  margin-bottom: 9.6rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  text-decoration: none;
+  font-size: 1.8rem;
+  padding: 1.6rem 6.4rem;
+  border-radius: 9px;
+  font-weight: 600;
+
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: all 0.3s;
+}
+
+.btn--full {
+  background-color: #4dabf7;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #2e8bd8;
+}
+
+.btn--outline {
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #edf7fe;
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+/***************************************************/
+/* FEATURED SECTION */
+/***************************************************/
+
+.section-featured {
+  padding: 9.6rem 0;
+}
+
+.featured img {
+  display: block;
+  width: 13rem;
+  height: 13rem;
+  opacity: 90%;
+}
+
+.featured {
+  display: flex;
+  justify-content: space-around;
+}
+
+/***************************************************/
+/* HOW IT WORKS SECTION */
+/***************************************************/
+
+.section-how {
+  padding: 9.6rem 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.how-it-works {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 6.4rem;
+  row-gap: 8rem;
+}
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 700;
+  color: #ddd;
+  margin-bottom: 1.6rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/***************************************************/
+/* TESTIMONIAL SECTION */
+/***************************************************/
+
+.section-testimonial {
+  padding: 9.6rem 0;
+}
+
+.heading {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.testimonial-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}

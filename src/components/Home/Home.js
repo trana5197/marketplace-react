@@ -5,6 +5,7 @@ import BusinessOwner from "../BusinessOwner/BusinessOwner";
 import SchoolAdmin from "../SchoolAdmin/SchoolAdmin";
 import Student from "../Student/Student";
 import SuperAdmin from "../SuperAdmin/SuperAdmin";
+import HomePage from "./HomePage";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ const Home = () => {
       />
     );
   } else {
-    homePage = <h1>WELCOME TO HOME PAGE</h1>;
+    homePage = <HomePage />;
   }
   return <div>{homePage}</div>;
 };
