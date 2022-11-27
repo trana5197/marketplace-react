@@ -38,6 +38,11 @@ const Student = (props) => {
     setDashboardRight(<Orders />);
   };
 
+  const chatHandler = (event) => {
+    event.preventDefault();
+    window.open("https://kxs2000-chat.onrender.com/");
+  };
+
   return (
     // <section className="section-student">
     <section>
@@ -72,6 +77,16 @@ const Student = (props) => {
                 onClick={ordersHandler}
               >
                 <span className={classes.order}>Orders</span>
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                className={`${classes["side-nav-link"]} ${classes.orders}`}
+                to="#"
+                onClick={chatHandler}
+              >
+                <span className={classes.order}>Chat</span>
               </Link>
             </li>
           </ul>

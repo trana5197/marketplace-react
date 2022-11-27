@@ -27,10 +27,6 @@ const BusinessOwner = (props) => {
     // navigate("/products", { replace: true });
   };
 
-  const manageChatHandler = (event) => {
-    event.preventDefault();
-  };
-
   return (
     <section>
       <div
@@ -46,15 +42,6 @@ const BusinessOwner = (props) => {
                 onClick={manageProductsHandler}
               >
                 Manage Products
-              </Link>
-            </li>
-            <li>
-              <Link
-                className={classes["side-nav-link"]}
-                to="/chat"
-                onClick={manageChatHandler}
-              >
-                Chat
               </Link>
             </li>
           </ul>
