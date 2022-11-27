@@ -21,6 +21,10 @@ const Header = () => {
     authCtx.setProfile("");
   };
 
+  const blogHandler = () => {
+    window.open("http://kxs2000.uta.cloud/");
+  };
+
   return (
     <header className={classes.header}>
       <div className="margin-left">
@@ -55,7 +59,15 @@ const Header = () => {
               </NavLink>
             )}
           </li>
-          <li>Blog</li>
+          <li>
+            <NavLink
+              className={classes.link}
+              to="/service"
+              onClick={blogHandler}
+            >
+              Blog
+            </NavLink>
+          </li>
           <li>
             <NavLink className={classes.link} to="/service">
               Service

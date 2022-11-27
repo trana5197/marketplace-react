@@ -14,15 +14,23 @@
   list-style: none;
 
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav ul li {
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 
-.link {
+.link:link,
+.link:visited {
   text-decoration: none;
+  color: #333;
+  font-weight: 700;
+}
+
+.link:hover,
+.link:active {
+  color: #2e8bd8;
 }

@@ -3,6 +3,19 @@ import classes from "./HomePage.module.css";
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
 import Footer from "./Footer";
+import heroImage from "../../images/hero.jpg";
+import clg1 from "../../images/clg-1.png";
+import clg2 from "../../images/clg-2.png";
+import clg3 from "../../images/clg-3.png";
+import clg4 from "../../images/clg-4.png";
+import clg5 from "../../images/clg-5.png";
+import clg6 from "../../images/clg-6.png";
+import cm1 from "../../images/customer1.jpg";
+import cm2 from "../../images/customer2.jpg";
+import cm3 from "../../images/customer3.jpg";
+import cm4 from "../../images/customer4.jpg";
+import cm5 from "../../images/customer5.jpg";
+import cm6 from "../../images/customer6.jpg";
 
 const HomePage = () => {
   return (
@@ -32,7 +45,7 @@ const HomePage = () => {
 
           <img
             className={classes["hero-img"]}
-            src="Img/hero.jpg"
+            src={heroImage}
             alt="students checking laptop"
           />
         </div>
@@ -42,18 +55,12 @@ const HomePage = () => {
         <p className="subheading margin-bottom-md center-text">Trusted by</p>
 
         <div className={classes.featured}>
-          <img src="Img/clg-1.png" alt="University of Texas at Dallas logo" />
-          <img
-            src="Img/clg-2.png"
-            alt="University of Texas at Arlington logo"
-          />
-          <img src="Img/clg-3.png" alt="California State university logo" />
-          <img src="Img/clg-4.png" alt="University of Texas logo" />
-          <img src="Img/clg-5.png" alt="University of Huston logo" />
-          <img
-            src="Img/clg-6.png"
-            alt="California State University Sacremento logo"
-          />
+          <img src={clg1} alt="University of Texas at Dallas logo" />
+          <img src={clg2} alt="University of Texas at Arlington logo" />
+          <img src={clg3} alt="California State university logo" />
+          <img src={clg4} alt="University of Texas logo" />
+          <img src={clg5} alt="University of Huston logo" />
+          <img src={clg6} alt="California State University Sacremento logo" />
         </div>
       </section>
 
@@ -110,7 +117,7 @@ const HomePage = () => {
           <figure className={classes.testimonial}>
             <img
               className={classes["testimonial-img"]}
-              src="Img/customer1.jpg"
+              src={cm1}
               alt="customer Dave Bryson"
             />
             <blockquote className={classes["testimonial-text"]}>
@@ -123,7 +130,7 @@ const HomePage = () => {
           <figure className={classes.testimonial}>
             <img
               className={classes["testimonial-img"]}
-              src="Img/customer2.jpg"
+              src={cm2}
               alt="customer Dave Bryson"
             />
             <blockquote className={classes["testimonial-text"]}>
@@ -136,7 +143,7 @@ const HomePage = () => {
           <figure className={classes.testimonial}>
             <img
               className={classes["testimonial-img"]}
-              src="Img/customer3.jpg"
+              src={cm3}
               alt="customer Dave Bryson"
             />
             <blockquote className={classes["testimonial-text"]}>
@@ -149,7 +156,7 @@ const HomePage = () => {
           <figure className={classes.testimonial}>
             <img
               className={classes["testimonial-img"]}
-              src="Img/customer4.jpg"
+              src={cm4}
               alt="customer Dave Bryson"
             />
             <blockquote className={classes["testimonial-text"]}>
@@ -162,7 +169,7 @@ const HomePage = () => {
           <figure className={classes.testimonial}>
             <img
               className={classes["testimonial-img"]}
-              src="Img/customer5.jpg"
+              src={cm5}
               alt="customer Dave Bryson"
             />
             <blockquote className={classes["testimonial-text"]}>
@@ -175,7 +182,7 @@ const HomePage = () => {
           <figure className={classes.testimonial}>
             <img
               className={classes["testimonial-img"]}
-              src="Img/customer6.jpg"
+              src={cm6}
               alt="customer Dave Bryson"
             />
             <blockquote className={classes["testimonial-text"]}>

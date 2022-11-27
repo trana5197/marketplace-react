@@ -36,7 +36,7 @@ body {
   text-transform: uppercase;
   color: #333;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: -1.5px;
 
   font-size: 7.4rem;
   line-height: 1.1;
