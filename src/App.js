@@ -8,11 +8,9 @@ import Home from "./components/Home/Home";
 import Service from "./components/Service/Service";
 import Forget from "./components/Forget/Forget";
 import SignIn from "./components/SignIn/SignIn";
+import Footer from "./components/Home/Footer";
 import axios from "axios";
-// import Student from "./components/Student/Student";
-// import BusinessOwner from "./components/BusinessOwner/BusinessOwner";
-// import SchoolAdmin from "./components/SchoolAdmin/SchoolAdmin";
-// import SuperAdmin from "./components/SuperAdmin/SuperAdmin";
+
 import { useContext } from "react";
 import AuthContext from "./store/auth-context";
 
@@ -61,6 +59,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   );
 }

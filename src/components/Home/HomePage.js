@@ -2,7 +2,6 @@ import classes from "./HomePage.module.css";
 
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import Footer from "./Footer";
 import heroImage from "../../images/hero.jpg";
 import clg1 from "../../images/clg-1.png";
 import clg2 from "../../images/clg-2.png";
@@ -193,7 +192,6 @@ const HomePage = () => {
           </figure>
         </div>
       </section>
-      <Footer />
     </Fragment>
   );
 };
