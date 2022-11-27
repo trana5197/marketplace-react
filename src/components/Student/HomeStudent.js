@@ -1,4 +1,5 @@
 import classes from "./HomeStudent.module.css";
+import profile from "../../images/profile.png";
 
 const HomeStudent = (props) => {
   return (
@@ -6,7 +7,7 @@ const HomeStudent = (props) => {
       <div className={classes.profile}>
         <img
           className={`${classes["profile-img"]} border-bottom`}
-          src=""
+          src={profile}
           alt="A person"
         />
         <div className={`${classes["profile-desc"]} border-top`}>
