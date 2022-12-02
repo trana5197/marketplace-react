@@ -14,7 +14,7 @@ import axios from "axios";
 import { useContext } from "react";
 import AuthContext from "./store/auth-context";
 
-axios.defaults.baseURL = "http://localhost:8000/";
+axios.defaults.baseURL = "https://fantastic-shortbread-385603.netlify.app";
 axios.defaults.headers.post["Content-Type"] = "Application/json";
 axios.defaults.headers.post["Accept"] = "Application/json";
 
